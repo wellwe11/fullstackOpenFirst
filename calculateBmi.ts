@@ -42,14 +42,22 @@ const calculateBmi = (height: number, weight: number): string => {
   return findCategory(bmi);
 };
 
-try {
-  const { valueOne, valueTwo } = parseArguments(process.argv);
-  console.log(calculateBmi(valueOne, valueTwo));
-} catch (error: unknown) {
-  let errorMessage = "Error ";
-  if (error instanceof Error) {
-    errorMessage += error.message;
-  }
+const runScript = () => {
+  try {
+    const { valueOne, valueTwo } = parseArguments(process.argv);
+    console.log(calculateBmi(valueOne, valueTwo));
+  } catch (error: unknown) {
+    let errorMessage = "Error ";
+    if (error instanceof Error) {
+      errorMessage += error.message;
+    }
 
-  console.log(errorMessage);
+    console.log(errorMessage);
+  }
+};
+
+if (process.argv.length > 2) {
+  runScript();
 }
+
+export default calculateBmi;

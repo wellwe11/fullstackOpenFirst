@@ -8,8 +8,7 @@
     "ts-node": "ts-node",
     "calculateBMI": "ts-node calculateBmi.ts",
     "exerciseCalculator": "ts-node exerciseCalculator.ts",
-    "start": "ts-node index.ts",
-    "dev": "ts-node-dev index.ts"
+    "start": "ts-node index.ts"
   },
   "keywords": [],
   "author": "",

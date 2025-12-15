@@ -1,14 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const BMIValues = {
+var BMIValues = {
     underweight: 16,
     normal: 18.5,
-    overweight: 25,
+    overweight: 26,
 };
-const findCategory = (bmi) => {
+var parseArguments = function (args) {
+    if (args.length < 4)
+        throw new Error("Not enough arguments");
+    if (args.length > 4)
+        throw new Error("Too many arguments");
+    if (!isNaN(Number(args[2])) && !isNaN(Number(args[3]))) {
+        return {
+            valueOne: Number(args[2]),
+            valueTwo: Number(args[3]),
+        };
+    }
+    else {
+        throw new Error("Provided values were not numbers!");
+    }
+};
+var findCategory = function (bmi) {
     if (typeof bmi !== "number")
         throw new Error("argument is not of typeof number");
-    const { normal, overweight } = BMIValues;
+    var normal = BMIValues.normal, overweight = BMIValues.overweight;
     if (bmi >= overweight)
         return "overweight";
     else if (bmi >= normal)
@@ -16,20 +31,21 @@ const findCategory = (bmi) => {
     else
         return "underweight";
 };
-const calculateBmi = (height, weight) => {
-    const heightInMeter = height / 100;
-    const square = heightInMeter * heightInMeter;
-    const bmi = weight / square;
+var calculateBmi = function (height, weight) {
+    var heightInMeter = height / 100;
+    var square = heightInMeter * heightInMeter;
+    var bmi = weight / square;
     return findCategory(bmi);
 };
 try {
-    console.log(calculateBmi(180, 74));
+    var _a = parseArguments(process.argv), valueOne = _a.valueOne, valueTwo = _a.valueTwo;
+    console.log(calculateBmi(valueOne, valueTwo));
 }
 catch (error) {
-    let errorMessage = "Error ";
+    var errorMessage = "Error ";
     if (error instanceof Error) {
         errorMessage += error.message;
     }
     console.log(errorMessage);
 }
-//# sourceMappingURL=calculateBmi.js.map
+exports.default = calculateBmi;
