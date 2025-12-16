@@ -8,7 +8,9 @@
     "ts-node": "ts-node",
     "calculateBMI": "ts-node calculateBmi.ts",
     "exerciseCalculator": "ts-node exerciseCalculator.ts",
-    "start": "ts-node index.ts"
+    "calculator": "ts-node calculator.ts",
+    "start": "ts-node index.ts",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -18,7 +20,12 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/eslint__js": "^8.42.3",
     "@types/express": "^5.0.6",
-    "ts-node-dev": "^2.0.0"
+    "eslint": "^9.39.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.50.0"
   }
 }

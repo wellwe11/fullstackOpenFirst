@@ -1,5 +1,3 @@
-const exerciseDays = [3, 0, 2, 4.5, 0, 3, 1];
-
 interface UserInput {
   valueOne: number[];
 }
@@ -115,3 +113,5 @@ try {
 
   console.log(errorMsg);
 }
+
+export default calculateExercises;

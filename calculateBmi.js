@@ -37,15 +37,20 @@ var calculateBmi = function (height, weight) {
     var bmi = weight / square;
     return findCategory(bmi);
 };
-try {
-    var _a = parseArguments(process.argv), valueOne = _a.valueOne, valueTwo = _a.valueTwo;
-    console.log(calculateBmi(valueOne, valueTwo));
-}
-catch (error) {
-    var errorMessage = "Error ";
-    if (error instanceof Error) {
-        errorMessage += error.message;
+var runScript = function () {
+    try {
+        var _a = parseArguments(process.argv), valueOne = _a.valueOne, valueTwo = _a.valueTwo;
+        console.log(calculateBmi(valueOne, valueTwo));
     }
-    console.log(errorMessage);
+    catch (error) {
+        var errorMessage = "Error ";
+        if (error instanceof Error) {
+            errorMessage += error.message;
+        }
+        console.log(errorMessage);
+    }
+};
+if (process.argv.length > 2) {
+    runScript();
 }
 exports.default = calculateBmi;

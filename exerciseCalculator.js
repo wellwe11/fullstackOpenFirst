@@ -1,5 +1,5 @@
 "use strict";
-var exerciseDays = [3, 0, 2, 4.5, 0, 3, 1];
+Object.defineProperty(exports, "__esModule", { value: true });
 // $ npm run calculateExercises 2 1 0 2 4.5 0 3 1 0 4
 var parseArguments = function (args) {
     if (args.length < 3)
@@ -89,3 +89,4 @@ catch (error) {
     }
     console.log(errorMsg);
 }
+exports.default = calculateExercises;

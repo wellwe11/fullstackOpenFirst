@@ -1,7 +1,24 @@
 import express from "express";
 import calculateBmi from "./calculateBmi";
+// import calculator, { Operation } from "./calculator";
 
 const app = express();
+
+// app.use(express.json());
+
+// app.post("/calculate", (req, res) => {
+//   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+//   const { value1, value2, op } = req.body;
+
+//   if (!value1 || !value2 || isNaN(Number(value1)) || isNaN(Number(value2))) {
+//     return res.status(400).send({ error: "..." });
+//   }
+
+//   const operation = op as Operation;
+
+//   const result = calculator(Number(value1), Number(value2), operation);
+//   res.send({ result });
+// });
 
 app.get("/bmi", (req, res) => {
   const heightStr: string = req.query.height as string;
